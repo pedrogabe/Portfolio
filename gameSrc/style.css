@@ -1,0 +1,17 @@
+body{
+	margin:0;
+}
+
+.game-container{
+    position: relative;
+    bottom:0;
+    height:100%;
+    width:100%;
+    background-color: crimson;
+}
+
+.t-rex{
+    position: absolute;
+    left: 50vw;
+    bottom:0;
+}

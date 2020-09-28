@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedro García Beguiristain</title>
+    <link rel="stylesheet" href="style.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&amp;family=Peddana&amp;family=Poppins:wght@300&amp;display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <a onclick="centerElement('.a')"><img src="logos/csharp_logo.png" alt="C#"></a>
+        <a onclick="centerElement('#webCenter')"><img src="logos/webLanguages_logo.png" alt="Web"></a>
+        <a onclick="centerElement('.d')"><img src="logos/electron_logo.png" alt="Electron"></a>
+        <a onclick="centerElement('.footer')"><img src="ico/mail.png" alt="Contacto"></a>
+    </nav>
+
+    <section class="a" onmouseover="document.querySelector('.a .hidden-video').play()" onmouseout="document.querySelector('.a .hidden-video').pause()">
+        <div class="video-cover">
+            <img src="logos/csharp_logo.png" alt="C#" class="logo" onclick="window.open('https://github.com/pedrogabe/Swp','_blank')">
+            <h2>Swp</h2>
+        </div>
+        <div class="video-container">
+            <video class="hidden-video" src="vid/testSwp.webm" muted="" loop></video>
+            <a target="_blank" href="https://github.com/pedrogabe/Swp">Ver en Github</a>
+        </div>
+    </section>
+
+    <section class="b">
+        <link rel="stylesheet" href="https://pedrogabe.github.io/New-Proj-minijuego/style.css">
+        <script defer src="https://pedrogabe.github.io/New-Proj-minijuego/script.js"></script>
+        <div class="pause-menu">
+            <div style="display: grid;">
+                <a onclick="shootGame(gameInProgress_Warning_displayed)">Jugar</a>
+                <a href="https://github.com/pedrogabe/New-Proj-minijuego" target="_blank">Ver código en Github</a>
+                <div style="grid-column-start:1; grid-column-end:3; display: flex; justify-content: center;">
+                    <a href="https://pedrogabe.github.io/New-Proj-minijuego" target="_blank">Jugar en otra pestaña</a>
+                </div>
+            </div>
+        </div>
+        <div class="game-container">
+            <img src="https://pedrogabe.github.io/New-Proj-minijuego/trex-0.png" alt="Player" class="t-rex" style="left:0">
+            <img src="https://pedrogabe.github.io/New-Proj-minijuego/trex-1.png" style="display: none;" alt=""> <!-- "preload" -->
+            <img src="https://pedrogabe.github.io/New-Proj-minijuego/trex-2.png" style="display: none;" alt=""> <!-- "preload" -->
+        </div>
+    </section>
+    <a style='display:hidden' id='webCenter'></a>
+    <section class="c" onmouseover="document.querySelector('.c .hidden-video').play()" onmouseout="document.querySelector('.c .hidden-video').pause()">
+        <div class="video-cover">
+            <img onmousedown="deploy(event, this)" src="logos/webLanguages_logo.png" alt="HTML-JS-CSS" class="logo">
+            <h2>Contador de tareas</h2>
+        </div>
+        <div class="video-container">
+            <video class="hidden-video" src="vid/tempContador.webm" muted="" loop></video>
+            <a target="_blank" href="https://pedrogabe.github.io/Contador-de-tasks">Abrir Contador</a>
+            <a target="_blank" href="https://github.com/pedrogabe/Contador-de-tasks">Ver en Github</a>
+        </div>
+    </section>
+
+    <section class="d" onmouseover="document.querySelector('.d .hidden-video').play()" onmouseout="document.querySelector('.d .hidden-video').pause()">
+        <div class="video-cover">
+            <img src="logos/electron_logo.png" alt="C#" class="logo" onclick="window.open('https://github.com/pedrogabe/YusanPass','_blank')">
+            <h2>YusanPass</h2>
+        </div>
+        <div class="video-container">
+            <video class="hidden-video" src="vid/YusanPass.mp4" muted="" loop></video>
+            <a target="_blank" href="https://github.com/pedrogabe/YusanPass">Ver en Github</a>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="contact-options">
+            <h3>Contacto</h3>
+            <button onclick="displayContact('mail')">Correo electrónico</button>
+            <button onclick="displayContact('cel')">Teléfono celular</button>
+            <button onclick="displayContact('tel')">Teléfono fijo</button>
+        </div>
+        <div class="contact-info">
+            <div class="mail">
+                <div>
+                    <img src="ico/mail.png" width='50px' alt="">
+                    <a href="mailto:pedrogabe@gmail.com">pedrogabe@gmail.com</a>
+                </div>
+            </div>
+            <div class="tel">
+                <div>
+                    <img src="ico/tel-fijo.png" width='50px' alt="">
+                    <a href="tel:47937425">47937425</a>
+                </div>
+            </div>
+            <div class="cel">
+                <div>
+                    <img src="ico/celular.png" width='50px' alt="">
+                    <a href="tel:111557227588">11 57227588</a>
+                </div>
+            </div>
+        </div>
+        <div class="back-up-button" onclick="window.scrollTo(0,0)">
+            <img src="ico/up.png" alt="Volver al principio" height="60%">
+        </div>
+    </section>
+
+    <div class="fullscreen" id='gameInProgressWarning' style='transition: opacity 0.5s; background-color:rgba(0,0,0,0.3); opacity:0; display:none'>
+        <div class="flex-center">
+            <div class='warning'>
+                <button onclick='closeElement("gameInProgressWarning")' style='background: none; color:white; position:absolute; right:5%; top:10%;'>X</button>
+                <h1>Atención</h1>
+                <p>Este juego todavía está en desarrollo pero el dinosaurio ya puede correr y saltar. También se puede ver más progresos ingresando al <a href="https://github.com/pedrogabe/New-Proj-minijuego" target="_blank">repositorio de Github</a>.</p>
+                <button onclick=shootGame(true) style='background-color: rgb(255,255,255); border:none;padding:5px'>Jugar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
