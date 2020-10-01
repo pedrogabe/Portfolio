@@ -12,10 +12,14 @@ function shootGame(unpauseDirectly){
         unpause()
     }
 }
-function closeElement(element){
+function closeElement(element, remove=false){
     var el = document.getElementById(element) || element;
     el.style.opacity=0;
-    el.addEventListener('transitionend',setToNone);
+    if(remove==true){
+        el.addEventListener('transitionend',el.remove);
+    }else{
+        el.addEventListener('transitionend',setToNone);
+    }
 }
 
 function setToNone(){
@@ -33,7 +37,7 @@ function deployCV(){
     CV_image.style.height='90%';
     CV_container.appendChild(CV_image);
     document.body.appendChild(CV_container);
-    CV_container.onclick=function(){closeElement(CV_container)};
+    CV_container.onclick=function(){closeElement(CV_container,true)};
     CV_image.onclick=function(){open('CV 30-9-20-1.png','_blank')};
 }
 
