@@ -13,7 +13,7 @@ function shootGame(unpauseDirectly){
     }
 }
 function closeElement(element){
-    var el = document.getElementById(element) || element;
+    var el = document.getElementById(element);
     el.style.opacity=0;
     el.addEventListener('transitionend',setToNone);
 }
@@ -22,20 +22,6 @@ function setToNone(){
     this.style.display='none'
 }
 
-
-function deployCV(){
-    let CV_container = document.createElement('DIV');
-    CV_container.classList='fullscreen flex-center';
-    CV_container.style.backgroundColor='rgba(0,0,0,0.3)'
-    CV_container.style.transition='0.2s';
-    let CV_image = document.createElement('img');
-    CV_image.src='CV 30-9-20-1.png';
-    CV_image.style.height='90%';
-    CV_container.appendChild(CV_image);
-    document.body.appendChild(CV_container);
-    CV_container.onclick=function(){closeElement(CV_container)};
-    CV_image.onclick=function(){open('CV 30-9-20-1.png','_blank')};
-}
 
 var dialog = document.createElement('div');
 dialog.className='dialog'
