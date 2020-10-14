@@ -69,6 +69,11 @@ h2{
     position: relative;
     transition:0.8s;
 }
+.e{
+    height: 40vh;
+    background-color: #f580a1;
+    background-image: linear-gradient(200deg, transparent 15%, rgba(187, 12, 108, 0.5) 80%);
+}
 .footer{
     height:30vh;
     display: grid;
